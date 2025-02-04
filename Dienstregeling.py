@@ -9,14 +9,20 @@ class Main:
         print(prefix, self.name)
 
     def main_loop(self):
-        self.invoer = input("Voer treindienstnummer in: ")
-        if self.invoer == "1":
-            print("Info voor treindienstnummer 1")
-            print("Openen van Dienst 1...")
+        while True:
+            self.invoer = input("Voer treindienstnummer in: ")
+            print(f"Info voor treindienstnummer {self.invoer}")
+            print(f"Openen van Dienst {self.invoer}")
             print("")
             with open("Dienst1.txt") as file:
                 for line in file:
-                    print(line.strip())
+                    if line.startswith("%"):
+                        num = line[1]
+                        print(line[3:])
+                    else:
+                        print(line.strip())
+            
+              
 
 
 
