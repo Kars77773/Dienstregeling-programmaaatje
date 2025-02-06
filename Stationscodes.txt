@@ -1,0 +1,8 @@
+
+^1.1 Dalfsen -> Zwolle
+1.2 Dalfsen -> Emmen
+
+^2.1 Zwolle -> Emmen en Coevorden
+2.2 Zwolle -> Enschede IC
+2.3 Zwolle -> Enschede
+2.4 Zwolle -> Kampen
