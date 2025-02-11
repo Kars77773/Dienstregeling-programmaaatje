@@ -41,6 +41,7 @@ class Main:
                 print("Opschonen...")
                 time.sleep(0.5)
                 os.system("cls")
+                print("V0.9.0")
                 print("Typ 'help' voor instructies")
                 print("")
 
@@ -66,7 +67,7 @@ class Main:
             else:
                 print("Error #101")
                 
-    ###############################################################################################            
+    ##############################################################################################            
     print("4")
 
     #Dienst openen
@@ -370,6 +371,7 @@ class Main:
                 print(f"%{self.station_nummer},{self.station},{self.richting} \n{resultaat}")
 
         os.system("cls")
+        print("V0.9.0")
         print("Gegenereerde dienst te vinden in 'Gegenereerde dienst.txt'")
         print("")
         print("Typ 'help' voor instructies")
@@ -473,6 +475,8 @@ class Main:
     print("")
     print("Typ 'help' voor instructies")
     print("")
+    print("V0.9.0")
+    print("All rights reserved © 2025-2026")
             
 
 if __name__ == "__main__":
