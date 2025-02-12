@@ -39,6 +39,7 @@ With this program there are (currently) 7 files needed for the program to work c
     - 'Dienst.txt' can be empty, and it is on you to fill it with your created schedules.
 
 ##  3. Update log and version stamps
+```
 Version stamps: X XX . XX . XX . XX
 Versionexample: R 01 . 02 . 01 . 09
                 | |    |    |    |
@@ -46,7 +47,7 @@ Versionexample: R 01 . 02 . 01 . 09
                 | |    |    |-> Minor count
                 | |    |-> Major count
                 | |-> Major count
-                |-> ALPHA, BETA or RELEASE as indicator
+                |-> ALPHA, BETA or RELEASE as indicator```
 
 ### 3.1 Update Log:
     Sort: Major, Minor, Patch
