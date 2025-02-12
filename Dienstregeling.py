@@ -9,13 +9,10 @@ class Main:
     print("Laden van gedefineerde assets...")
     print("1")
 
-
-
     def __init__(self, name):
         self.name = name
 
     print("2")
-
 
     def print_name(self, prefix,):
         print(prefix, self.name)
@@ -149,72 +146,82 @@ class Main:
     #Invoeren nieuwe dienst
 
     def nieuwe_dienst(self):
-        print("Vul gegevens in.")
-        print("'station' -> 'richting', 'frequentie' tph, start 'startuur':'minuut' en stop 'stoptijd':'minuut'. ")
-        print("BIJ STAP 2: INVULLEN STATIONSNUMMER EN DIENSTNUMMER. Bijv: '4.1'")
-        print("")
-        print("Frequentie kan zijn: 1,2,4,8 tph!")
-        print("Geef Starttijd op in uren!")
-        print("Voorbeeld: 'Zwolle' -> 'Emmen', '4' tph, start '05':'23', en stop '23':'23'.")
-        self.station = None
-        self.richting = None
-        self.frequentie = None
-        self.startuur = None
-        self.stopminuut = None
-        self.stopuur = None
-        self.stopminuut = None
-        self.station = input("home/nds/station </> ")
-        print("Startlocatie/Station toegevoegd. Stap 1/7 gereed.")
-        self.station_nummer = input("home/nds/stationsnummer </> ")
-        print("Stationsnummer toegevoegd. Stap 2/7 gereed.")
-        self.richting = input("home/nds/richting </> ")
-        print("Richting toegevoegd. Stap 3/7 gereed.")
-        self.frequentie = int(input("home/nds/frequentie </> "))
-        print("Frequentie toegevoegd. Stap 4/7 gereed.")
-        self.startuur = int(input("home/nds/startuur </> "))
-        print("Startuur toegevoegd. Stap 5/7 gereed.")
-        self.minuut = int(input("home/nds/startminuut </> "))
-        print("Vertrekminuut toegevoegd. Stap 6/7 gereed.")
-        self.stopuur = int(input("home/nds/stopuur </> "))
-        print("Stopuur toegevoegd. Stap 7/7 gereed.")
+        while True:
+            print("Weet u zeker dat u een nieuwe dienst wilt maken? J/N")
+            doorgaan = input("home/nds </> ")
 
+            if doorgaan == 'J' or doorgaan == 'j':
+                print("Vul gegevens in.")
+                print("'station' -> 'richting', 'frequentie' tph, start 'startuur':'minuut' en stop 'stoptijd':'minuut'. ")
+                print("BIJ STAP 2: INVULLEN STATIONSNUMMER EN DIENSTNUMMER. Bijv: '4.1'")
+                print("")
+                print("Frequentie kan zijn: 1,2,4,8 tph!")
+                print("Geef Starttijd op in uren!")
+                print("Voorbeeld: 'Zwolle' -> 'Emmen', '4' tph, start '05':'23', en stop '23':'23'.")
+                self.station = None
+                self.richting = None
+                self.frequentie = None
+                self.startuur = None
+                self.stopminuut = None
+                self.stopuur = None
+                self.stopminuut = None
+                self.station = input("home/nds/station </> ")
+                print("Startlocatie/Station toegevoegd. Stap 1/7 gereed.")
+                self.station_nummer = input("home/nds/stationsnummer </> ")
+                print("Stationsnummer toegevoegd. Stap 2/7 gereed.")
+                self.richting = input("home/nds/richting </> ")
+                print("Richting toegevoegd. Stap 3/7 gereed.")
+                self.frequentie = int(input("home/nds/frequentie </> "))
+                print("Frequentie toegevoegd. Stap 4/7 gereed.")
+                self.startuur = int(input("home/nds/startuur </> "))
+                print("Startuur toegevoegd. Stap 5/7 gereed.")
+                self.minuut = int(input("home/nds/startminuut </> "))
+                print("Vertrekminuut toegevoegd. Stap 6/7 gereed.")
+                self.stopuur = int(input("home/nds/stopuur </> "))
+                print("Stopuur toegevoegd. Stap 7/7 gereed.")
 
-        if self.frequentie > 60:
-            print("Error #201")
-
-        else:
-            print(f"{self.station} -> {self.richting}, {self.frequentie} tph, start {self.startuur}:{self.minuut} en stop {self.stopuur}:{self.minuut}")
-            print("Deze waarden opslaan of wijzigen? J/N/W")
-
-        #Keuze menu J/N/W 
-
-            while True:
-
-                afbreken = input("home/nds/opslaan </> ")
-
-                if afbreken == "n" or afbreken == "N":
-                    self.station = None
-                    self.richting = None
-                    self.frequentie = None
-                    self.startuur = None
-                    self.minuut = None
-                    self.stopuur = None
-                    print("Nieuwe dienst maken afgebroken.")
-                    print("")
-                    break
-
-                elif afbreken == "w" or afbreken == "W":
-                    self.wijzigen_dienst()
-
-
-                elif afbreken == "j" or afbreken == "J":
-                    os.system("cls")
-                    self.dienst_generen()
+                if self.frequentie > 60:
+                    print("Error #201")
                     break
 
                 else:
-                    print("Error #101")
-                    
+                    print(f"{self.station} -> {self.richting}, {self.frequentie} tph, start {self.startuur}:{self.minuut} en stop {self.stopuur}:{self.minuut}")
+                    print("Deze waarden opslaan of wijzigen? J/W")
+                    while True:
+                        afbreken = input("home/nds/opslaan </> ")
+
+                        if afbreken == "n" or afbreken == "N":
+                            self.station = None
+                            self.richting = None
+                            self.frequentie = None
+                            self.startuur = None
+                            self.minuut = None
+                            self.stopuur = None
+                            print("Nieuwe dienst maken afgebroken.")
+                            print("")
+                            break
+
+                        elif afbreken == "w" or afbreken == "W":
+                            self.wijzigen_dienst()
+
+
+                        elif afbreken == "j" or afbreken == "J":
+                            os.system("cls")
+                            self.dienst_generen()
+                            break
+
+                        elif afbreken == 'cd':
+                            break
+                        
+                        else:
+                            print("Error #101")
+
+            elif doorgaan == 'n' or doorgaan == 'N':
+                print("Maken dienst afgebroken")
+                break
+                
+            elif doorgaan == 'cd':
+                break
     print("8")      
 
 #Wijzigen van een de ingevulde waardes voor een nieuwe dienst.
@@ -223,57 +230,75 @@ class Main:
         print("")
         print("Wijzigen van ingevoerde gegevens.")
         print("Welke waarde wilt u wijzigen?")
-        print("1. voor Station")
-        print("2. voor Stationsnummer")
-        print("3. voor Richting")
-        print("4. voor Frequentie in tph")
-        print("5. voor Startuur")
-        print("6. voor Vertrekminuut")
-        print("7. voor Stopuur")
+        print("'/1' voor Station")
+        print("'/2' voor Stationsnummer")
+        print("'/3' voor Richting")
+        print("'/4' voor Frequentie in tph")
+        print("'/5' voor Startuur")
+        print("'/6' voor Vertrekminuut")
+        print("'/7' voor Stopuur")
         print("")
         self.wijzigen = input("home/nds/opslaan/wijzigen </> ")
 
-        if self.wijzigen == "1":
-            self.station = input("home/nds/opslaan/wijzigen/station </> ")
-            print(f"Het Station is gewijzigd naar: {self.station}")
-            print("Deze waarden opslaan of wijzigen? J/N/W")
+        if self.wijzigen == "/1":
+            self.station = input("home/nds/opslaan/wijzigen/1 </> ")
+            if self.station == 'cd':
+                self.wijzigen_dienst()
+            else:
+                print(f"Het Station is gewijzigd naar: {self.station}")
+                print("Deze waarden opslaan of wijzigen? J/N/W")
 
-        elif self.wijzigen == "2":
-            self.station_nummer = input("home/nds/opslaan/wijzigen/stationsnummer </> ")
-            print(f"Het Stationsnummer is gewijzigd naar: {self.station_nummer}")
-            print("Deze waarden opslaan of wijzigen? J/N/W")
+        elif self.wijzigen == "/2":
+            self.station_nummer = input("home/nds/opslaan/wijzigen/2 </> ")
+            if self.station_nummer == 'cd':
+                self.wijzigen_dienst()
+            else:
+                print(f"Het Stationsnummer is gewijzigd naar: {self.station_nummer}")
+                print("Deze waarden opslaan of wijzigen? J/N/W")
 
-        elif self.wijzigen == "3":
-            self.richting = input("home/nds/opslaan/wijzigen/richting </> ")
-            print(f"De Richting is gewijzigd naar: {self.richting}")
-            print("Deze waarden opslaan of wijzigen? J/N/W")
+        elif self.wijzigen == "/3":
+            self.richting = input("home/nds/opslaan/wijzigen/3 </> ")
+            if self.richting == 'cd':
+                self.wijzigen_dienst()
+            else:
+                print(f"De Richting is gewijzigd naar: {self.richting}")
+                print("Deze waarden opslaan of wijzigen? J/W")
 
-        elif self.wijzigen == "4":
-            self.frequentie = int(input("home/nds/opslaan/wijzigen/frequentie </> "))
-            print(f"De frequentie is gewijzigd naar: {self.frequentie}")
-            print("Deze waarden opslaan of wijzigen? J/N/W")
+        elif self.wijzigen == "/4":
+            self.frequentie = int(input("home/nds/opslaan/wijzigen/f4 </> "))
+            if self.frequentie == 'cd':
+                self.wijzigen_dienst()
+            else:
+                print(f"De frequentie is gewijzigd naar: {self.frequentie}")
+                print("Deze waarden opslaan of wijzigen? J/W")
 
-        elif self.wijzigen == "5":
-            self.startuur = int(input("home/nds/opslaan/wijzigen/startuur </> "))
-            print(f"Het Startuur is gewijzigd naar: {self.startuur}")
-            print("Deze waarden opslaan of wijzigen? J/N/W")
+        elif self.wijzigen == "/5":
+            self.startuur = int(input("home/nds/opslaan/wijzigen/5 </> "))
+            if self.startuur == 'cd':
+                self.wijzigen_dienst()
+            else:
+                print(f"Het Startuur is gewijzigd naar: {self.startuur}")
+                print("Deze waarden opslaan of wijzigen? J/W")
 
-        elif self.wijzigen == "6":
-            self.minuut = int(input("home/nds/opslaan/wijzigen/startminuut </> "))
-            print(f"De minuut is gewijzigd naar: {self.minuut}")
-            print("Deze waarden opslaan of wijzigen? J/N/W")
+        elif self.wijzigen == "/6":
+            self.minuut = int(input("home/nds/opslaan/wijzigen/6 </> "))
+            if self.minuut == 'cd':
+                self.wijzigen_dienst()
+            else:
+                print(f"De minuut is gewijzigd naar: {self.minuut}")
+                print("Deze waarden opslaan of wijzigen? J/W")
 
-        elif self.wijzigen == "7":
-            self.stopuur = int(input("home/nds/opslaan/wijzigen/stopuur </> "))
-            print(f"Het Stopuur is gewijzigd naar: {self.stopuur}")
-            print("Deze waarden opslaan of wijzigen? J/N/W")
+        elif self.wijzigen == "/7":
+            self.stopuur = int(input("home/nds/opslaan/wijzigen/7 </> "))
+            if self.stopuur == 'cd':
+                self.wijzigen_dienst()
+            else:
+                print(f"Het Stopuur is gewijzigd naar: {self.stopuur}")
+                print("Deze waarden opslaan of wijzigen? J/W")
 
         elif self.wijzigen == "cd":
-            print("Deze waarden opslaan of wijzigen? J/N/W")
-
-        else:
-            print("Error #101")
-    
+            print("Deze waarden opslaan of wijzigen? J/W")
+ 
     print("9")
     
     #Generen van een nieuwe dienst            
@@ -285,7 +310,6 @@ class Main:
         diensturen = np.arange(self.starttijd,self.stoptijd,1/self.frequentie)
         self.omschrijven(diensturen)
     
-        
     print("10")
 
     def omschrijven(self, diensturen):            
@@ -358,7 +382,6 @@ class Main:
 
             # Final formatted output
             resultaat = "\n".join(formatted_result)
-
 
             # Group times so that each hour starts on a new line
             formatted_result = []
@@ -436,7 +459,6 @@ class Main:
                 self.open_stationsnummer(self.stccode)
                 print("")
 
-
             elif self.help == "/2":
                 print("Toevoegen Dienst:")
                 print("1. Gebruik het commando 'nds' of 'NDS' om een nieuwe dienstregeling genereren.")
@@ -446,8 +468,6 @@ class Main:
                 print("4. De gegenereerde dienst zal in het bestand 'Gegenereerde dienst.txt' te vinden zijn.")
                 print("")
                 
-
-
             elif self.help == "/3":        
                 print("Volgende Error's:")
                 print("")
@@ -476,10 +496,6 @@ class Main:
 
     print("12")
 
-
-
-
-
     print("Controleren van bestanden...")
     with open("Dienst.txt") as file:
         print("1")
@@ -501,8 +517,6 @@ class Main:
     os.system("cls")
     print("Typ '/help' voor instructies")
     print("")
-
-            
 
 if __name__ == "__main__":
     test = Main("Hallo")

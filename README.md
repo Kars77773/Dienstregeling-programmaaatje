@@ -47,14 +47,24 @@ Versionexample: R 01 . 02 . 01 . 09
                 | |    |    |-> Minor count
                 | |    |-> Major count
                 | |-> Major count
-                |-> ALPHA, BETA or RELEASE as indicator```
+                |-> ALPHA, BETA or RELEASE as indicator
 
 ### 3.1 Update Log:
     Sort: Major, Minor, Patch
 
     Last Version:
 
-    Version: BETA 00.01.02.00
+    Version: BETA 00.01.03.00
+    Shortened version: B0.1.3.0
+    Sort: Minor
+    Addition(s):
+    - It is now possible to use 'cd' to go back a step (almost everywhere)
+    - Changed numbers in 'Wijzigen Dienst'
+
+
+    VERSION HISTORY
+
+        Version: BETA 00.01.02.00
     Shortened version: B0.1.2.0
     Sort: Minor
     Addition(s):
@@ -62,8 +72,6 @@ Versionexample: R 01 . 02 . 01 . 09
     - Changed text before '</>'
     - '/info' command changed to '/update log'
 
-
-    VERSION HISTORY
     
     Version: BETA 00.01.01.03
     Shortened version: B0.1.1.3
@@ -83,7 +91,7 @@ Versionexample: R 01 . 02 . 01 . 09
     Shortened version: B0.1.1.1
     Sort: Patch
     Addition(s):
-    - Texs in front of '</>' changed
+    - Text in front of '</>' changed
 
 
     Version: BETA 00.01.01.00
@@ -153,4 +161,3 @@ Versionexample: R 01 . 02 . 01 . 09
     - 'Dienstnummer' code added
     - 'Help_Menu' code added
     - 'Stationsnummers.txt' added
-
