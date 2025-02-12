@@ -24,7 +24,7 @@ class Main:
     def main_loop(self):
         while True:
 
-            self.home = input("hme </> ")
+            self.home = input("home </> ")
 
             if self.home == "dnr" or self.home == "DNR":
                 print("")
@@ -41,7 +41,7 @@ class Main:
                 print("Opschonen...")
                 time.sleep(0.5)
                 os.system("cls")
-                print("V0.9.0")
+                print("V B0.1.1.1")
                 print("Typ 'help' voor instructies")
                 print("")
 
@@ -50,7 +50,7 @@ class Main:
 
             elif self.home == "afsl" or self.home == "AFSL":
                     print("Weet u het zeker? J/N")
-                    afsluit = input("afs </> ")
+                    afsluit = input("afsluiten </> ")
                     if afsluit == "j" or afsluit == "J":
                         print("Afsluiten en opschonen...")
                         time.sleep(0.5)
@@ -60,9 +60,17 @@ class Main:
                         print("aflsluiten afgebroken")
                         print("")
                         continue
-                    
+                
                     else:
                         print("Error #101")
+
+            elif self.home == "update log" or self.home == "Update log":
+                print("")
+                with open("Update.txt") as file:
+                    for line in file:
+                        file_2 = line.strip()
+                        time.sleep(0.01)
+                        print(f"{file_2}")
                 
             else:
                 print("Error #101")
@@ -150,19 +158,19 @@ class Main:
         self.stopminuut = None
         self.stopuur = None
         self.stopminuut = None
-        self.station = input("sta </> ")
+        self.station = input("station </> ")
         print("Startlocatie/Station toegevoegd. Stap 1/7 gereed.")
-        self.station_nummer = input("stn </> ")
+        self.station_nummer = input("stationsnummer </> ")
         print("Stationsnummer toegevoegd. Stap 2/7 gereed.")
-        self.richting = input("rig </> ")
+        self.richting = input("richting </> ")
         print("Richting toegevoegd. Stap 3/7 gereed.")
-        self.frequentie = int(input("frq </> "))
+        self.frequentie = int(input("frequentie </> "))
         print("Frequentie toegevoegd. Stap 4/7 gereed.")
-        self.startuur = int(input("stu </> "))
+        self.startuur = int(input("startuur </> "))
         print("Startuur toegevoegd. Stap 5/7 gereed.")
-        self.minuut = int(input("stm </> "))
+        self.minuut = int(input("startminuut </> "))
         print("1e Vertrekminuut toegevoegd. Stap 6/7 gereed.")
-        self.stopuur = int(input("spu </> "))
+        self.stopuur = int(input("stopuur </> "))
         print("Stopuur toegevoegd. Stap 7/7 gereed.")
 
 
@@ -216,38 +224,38 @@ class Main:
         print("6. voor Vertrekminuut")
         print("7. voor Stopuur")
         print("")
-        self.wijzigen = input("wiz </> ")
+        self.wijzigen = input("wijzigen </> ")
         if self.wijzigen == "1":
-            self.station = input("sta </> ")
+            self.station = input("station </> ")
             print(f"Het Station is gewijzigd naar: {self.station}")
             print("Deze waarden opslaan of wijzigen? J/N/W")
 
         elif self.wijzigen == "2":
-            self.station_nummer = input("stn </> ")
+            self.station_nummer = input("stationsnummer </> ")
             print(f"Het Stationsnummer is gewijzigd naar: {self.station_nummer}")
 
         elif self.wijzigen == "3":
-            self.richting = input("rig </> ")
+            self.richting = input("richting </> ")
             print(f"De Richting is gewijzigd naar: {self.richting}")
             print("Deze waarden opslaan of wijzigen? J/N/W")
 
         elif self.wijzigen == "4":
-            self.frequentie = int(input("frq </> "))
+            self.frequentie = int(input("frequentie </> "))
             print(f"De frequentie is gewijzigd naar: {self.frequentie}")
             print("Deze waarden opslaan of wijzigen? J/N/W")
 
         elif self.wijzigen == "5":
-            self.startuur = int(input("stu </> "))
+            self.startuur = int(input("startuur </> "))
             print(f"Het Startuur is gewijzigd naar: {self.startuur}")
             print("Deze waarden opslaan of wijzigen? J/N/W")
 
         elif self.wijzigen == "6":
-            self.minuut = int(input("stm </> "))
+            self.minuut = int(input("startminuut </> "))
             print(f"De minuut is gewijzigd naar: {self.minuut}")
             print("Deze waarden opslaan of wijzigen? J/N/W")
 
         elif self.wijzigen == "7":
-            self.stopuur = int(input("stu </> "))
+            self.stopuur = int(input("stopuur </> "))
             print(f"Het Stopuur is gewijzigd naar: {self.stopuur}")
 
 
@@ -371,7 +379,7 @@ class Main:
                 print(f"%{self.station_nummer},{self.station},{self.richting} \n{resultaat}")
 
         os.system("cls")
-        print("V0.9.0")
+        print("V B0.1.1.1")
         print("Gegenereerde dienst te vinden in 'Gegenereerde dienst.txt'")
         print("")
         print("Typ 'help' voor instructies")
@@ -409,7 +417,7 @@ class Main:
         print("Druk ENTER om te verlaten.")
 
         while True:
-            self.help = input("hlp </> ")
+            self.help = input("help </> ")
             if self.help == "1":
 
                 self.stationsnummer()
@@ -472,11 +480,14 @@ class Main:
     with open("Gegenereerde dienst.txt") as file:
         print("6")
     print("")
-    print("")
+    print("DISCLAIMER")
+    print("This programme is still in BETA and bugs or errors can show up at any time!")
+    print("Dit programma is in BETA. Hierbij zijn bugs of erros niet uitgesloten!")
+    time.sleep(1.5)
+    os.system("cls")
     print("Typ 'help' voor instructies")
     print("")
-    print("V0.9.0")
-    print("All rights reserved © 2025-2026")
+
             
 
 if __name__ == "__main__":
