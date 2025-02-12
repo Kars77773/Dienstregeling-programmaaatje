@@ -1,12 +1,15 @@
 import os
 import time
 import numpy as np
+from pathlib import Path
 
 class Main:
 
     print("Initialiseren:")
     print("Laden van gedefineerde assets...")
     print("1")
+
+
 
     def __init__(self, name):
         self.name = name
@@ -26,7 +29,7 @@ class Main:
 
             self.home = input("home </> ")
 
-            if self.home == "dnr" or self.home == "DNR":
+            if self.home == "/dnr" or self.home == "/DNR":
                 print("")
                 self.invoer = input("home/dnr </> ")
                 print(f"Openen van Dienst {self.invoer}...")
@@ -34,20 +37,20 @@ class Main:
                 self.open_dienst(self.invoer)
 
 
-            elif self.home == "help" or self.home == "Help":
+            elif self.home == "/help" or self.home == "/Help":
                 self.help_menu()
             
-            elif self.home == "ops" or self.home == 'OPS':
+            elif self.home == "/ops" or self.home == '/OPS':
                 print("Opschonen...")
                 time.sleep(0.5)
                 os.system("cls")
                 print("Typ 'help' voor instructies")
                 print("")
 
-            elif self.home == 'nds' or self.home == 'NDS':
+            elif self.home == '/nds' or self.home == '/NDS':
                 self.nieuwe_dienst()
 
-            elif self.home == "afsl" or self.home == "AFSL":
+            elif self.home == "/afsl" or self.home == "/AFSL":
                     print("Weet u het zeker? J/N")
                     afsluit = input("home/afsluiten </> ")
                     if afsluit == "j" or afsluit == "J":
@@ -63,13 +66,16 @@ class Main:
                     else:
                         print("Error #101")
 
-            elif self.home == "update log" or self.home == "Update log":
+            elif self.home == "/update log" or self.home == "/Update log":
                 print("")
                 with open("Update.txt") as file:
                     for line in file:
                         file_2 = line.strip()
                         time.sleep(0.01)
                         print(f"{file_2}")
+
+            elif self.home == 'cd':
+                print("Error# #104")
                 
             else:
                 print("Error #101")
@@ -168,14 +174,13 @@ class Main:
         self.startuur = int(input("home/nds/startuur </> "))
         print("Startuur toegevoegd. Stap 5/7 gereed.")
         self.minuut = int(input("home/nds/startminuut </> "))
-        print("1e Vertrekminuut toegevoegd. Stap 6/7 gereed.")
+        print("Vertrekminuut toegevoegd. Stap 6/7 gereed.")
         self.stopuur = int(input("home/nds/stopuur </> "))
         print("Stopuur toegevoegd. Stap 7/7 gereed.")
 
 
         if self.frequentie > 60:
             print("Error #201")
-            print("Error #202")
 
         else:
             print(f"{self.station} -> {self.richting}, {self.frequentie} tph, start {self.startuur}:{self.minuut} en stop {self.stopuur}:{self.minuut}")
@@ -185,7 +190,7 @@ class Main:
 
             while True:
 
-                afbreken = input("ops </> ")
+                afbreken = input("home/nds/opslaan </> ")
 
                 if afbreken == "n" or afbreken == "N":
                     self.station = None
@@ -206,6 +211,9 @@ class Main:
                     os.system("cls")
                     self.dienst_generen()
                     break
+
+                else:
+                    print("Error #101")
                     
     print("8")      
 
@@ -223,41 +231,45 @@ class Main:
         print("6. voor Vertrekminuut")
         print("7. voor Stopuur")
         print("")
-        self.wijzigen = input("home/nds/wijzigen </> ")
+        self.wijzigen = input("home/nds/opslaan/wijzigen </> ")
+
         if self.wijzigen == "1":
-            self.station = input("home/nds/wijzigen/station </> ")
+            self.station = input("home/nds/opslaan/wijzigen/station </> ")
             print(f"Het Station is gewijzigd naar: {self.station}")
             print("Deze waarden opslaan of wijzigen? J/N/W")
 
         elif self.wijzigen == "2":
-            self.station_nummer = input("home/nds/wijzigen/stationsnummer </> ")
+            self.station_nummer = input("home/nds/opslaan/wijzigen/stationsnummer </> ")
             print(f"Het Stationsnummer is gewijzigd naar: {self.station_nummer}")
+            print("Deze waarden opslaan of wijzigen? J/N/W")
 
         elif self.wijzigen == "3":
-            self.richting = input("home/nds/wijzigen/richting </> ")
+            self.richting = input("home/nds/opslaan/wijzigen/richting </> ")
             print(f"De Richting is gewijzigd naar: {self.richting}")
             print("Deze waarden opslaan of wijzigen? J/N/W")
 
         elif self.wijzigen == "4":
-            self.frequentie = int(input("home/nds/wijzigen/frequentie </> "))
+            self.frequentie = int(input("home/nds/opslaan/wijzigen/frequentie </> "))
             print(f"De frequentie is gewijzigd naar: {self.frequentie}")
             print("Deze waarden opslaan of wijzigen? J/N/W")
 
         elif self.wijzigen == "5":
-            self.startuur = int(input("home/nds/wijzigen/startuur </> "))
+            self.startuur = int(input("home/nds/opslaan/wijzigen/startuur </> "))
             print(f"Het Startuur is gewijzigd naar: {self.startuur}")
             print("Deze waarden opslaan of wijzigen? J/N/W")
 
         elif self.wijzigen == "6":
-            self.minuut = int(input("home/nds/wijzigen/startminuut </> "))
+            self.minuut = int(input("home/nds/opslaan/wijzigen/startminuut </> "))
             print(f"De minuut is gewijzigd naar: {self.minuut}")
             print("Deze waarden opslaan of wijzigen? J/N/W")
 
         elif self.wijzigen == "7":
-            self.stopuur = int(input("home/nds/wijzigen/stopuur </> "))
+            self.stopuur = int(input("home/nds/opslaan/wijzigen/stopuur </> "))
             print(f"Het Stopuur is gewijzigd naar: {self.stopuur}")
+            print("Deze waarden opslaan of wijzigen? J/N/W")
 
-
+        elif self.wijzigen == "cd":
+            print("Deze waarden opslaan of wijzigen? J/N/W")
 
         else:
             print("Error #101")
@@ -391,41 +403,41 @@ class Main:
         print("")
         print("Help Menu:")
         print("- De tekst voor '</>' geeft locatie in programma aan.")
-        print("- Gebruik menu 1 (Stationcodes) voor informatie over stations en dienstregeling.")
-        print("- Gebruik menu 2 (Toevoegen Dienst en Nummer) voor instructies om een dienstregeling toe te voegen.")
-        print("- Gebruik menu 3 (Error codes) voor de geregistreerde error codes in dit programma.")
+        print("- Gebruik menu '/1' (Stationcodes) voor informatie over stations en dienstregeling.")
+        print("- Gebruik menu '/2' (Toevoegen Dienst en Nummer) voor instructies om een dienstregeling toe te voegen.")
+        print("- Gebruik menu '/3' (Error codes) voor de geregistreerde error codes in dit programma.")
         print("")
         print("Bruikbare commando's:")
-        print("- afsl of AFSL")
+        print("- '/afsl' of '/AFSL'")
         print("   Sluit het programma af")
-        print("- dnr of DNR")
-        print("   Gebruiken voor invoeren dienstnummer.")
-        print("- help of Help")
+        print("- '/dnr' of '/DNR'")
+        print("   Gebruiken voor invoeren dienstnummer. (Verkregen uit helpmenu '1', stationscodes.)")
+        print("- '/help' of '/Help'")
         print("   Opent het 'Help Menu'.")
-        print("- ops of OPS")
+        print("- '/ops' of '/OPS'")
         print("   Gebruiken voor het legen van de consol.e")
-        print("- nds of NDS")
+        print("- '/nds' of '/NDS'")
         print("   Gebruiken om een nieuwe dienstregeling toe te voegen.")
         print("")
         print("Voer menunummer in voor betreffend hulpmiddel.")
-        print("  1. Stationscodes ")
-        print("  2. Toevoegen Dienst en Nummer.")
-        print("  3. Error codes")
+        print("  '/1' Voor de Stationscodes ")
+        print("  '/2' Voor het toevoegen Dienst en Nummer.")
+        print("  '/3' Voor Error codes")
         print("")
-        print("Druk ENTER om te verlaten.")
+        print("Typ 'cd' op terug te gaan")
 
         while True:
             self.help = input("home/help </> ")
-            if self.help == "1":
+            if self.help == "/1":
 
                 self.stationsnummer()
-                self.stccode = input("home/help/stationscodes </> ")
+                self.stccode = input("home/help/1/stationscodes > ")
                 print(f"Openen van Stationscodes voor Station {self.stccode}...")
                 self.open_stationsnummer(self.stccode)
                 print("")
 
 
-            elif self.help == "2":
+            elif self.help == "/2":
                 print("Toevoegen Dienst:")
                 print("1. Gebruik het commando 'nds' of 'NDS' om een nieuwe dienstregeling genereren.")
                 print("2. Voer alle gevraagde gegevens in. Deze moeten in een bepaalde volgorde worden ingevuld.")
@@ -436,7 +448,7 @@ class Main:
                 
 
 
-            elif self.help == "3":        
+            elif self.help == "/3":        
                 print("Volgende Error's:")
                 print("")
                 print("- Error #101")
@@ -444,17 +456,17 @@ class Main:
                 print("- Error #102")
                 print("   Gegeven wanneer er een onjuist/niet bestaand dienstnummer wordt opgegeven.")
                 print("- Error #103")
-                print("   Gegeven wanneer er een onjuist/niet bestaand nummer wordt opgegeven in 'Help Menu'")
+                print("   Gegeven wanneer er een onjuist/niet bestaand nummer wordt opgegeven in 'Help Menu'.")
+                print("- Error #104")
+                print("   Gegeven wanneer de opdracht 'cd' onuitvoorbaar is.")
                 print("- Error #201")
                 print("   Gegeven wanneer de opgegeven frequentie te hoog is.")
                 print("- Error #202")
-                print("   Gegeven wanneer de opgegeven frequentie anders is dan '1','2','4'of'8'.")
-                print("- Error #203")
                 print("   Gegeven wanneer het opgegeven 'station' of 'richting' leeg is.")
                 print("")
                 print("Raadpleeg het internet of een codeboek wanneer de gegeven code niet in deze lijst bekend is.")
 
-            elif self.help == "verlaat":
+            elif self.help == "cd":
                 print("")
                 break
 
@@ -463,6 +475,10 @@ class Main:
                 break
 
     print("12")
+
+
+
+
 
     print("Controleren van bestanden...")
     with open("Dienst.txt") as file:
@@ -483,7 +499,7 @@ class Main:
     print("Dit programma is in BETA. Hierbij zijn bugs of erros niet uitgesloten!")
     time.sleep(1.5)
     os.system("cls")
-    print("Typ 'help' voor instructies")
+    print("Typ '/help' voor instructies")
     print("")
 
             
