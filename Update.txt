@@ -4,14 +4,21 @@ Soorten updates: Groot, Klein, Patch
 
 Laatste Versie:
 
-Versie: BETA 00.01.01.02
-Ingekorte Versie: B0.1.1.2
+Versie: BETA 00.01.01.03
+Ingekorte Versie: B0.1.1.3
 Soort update: Patch
     Toevoeging(en)
         - Bug fix voor 'Help'
 
 
 VERSIE GESCHIEDENIS
+
+Versie: BETA 00.01.01.02
+Ingekorte Versie: B0.1.1.2
+Soort update: Patch
+    Toevoeging(en)
+        - Bug fix voor 'Help'
+
 
 Versie: BETA 00.01.01.01
 Ingekorte Versie: B0.1.1.1

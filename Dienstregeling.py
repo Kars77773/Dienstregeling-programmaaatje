@@ -28,7 +28,7 @@ class Main:
 
             if self.home == "dnr" or self.home == "DNR":
                 print("")
-                self.invoer = input("dnr </> ")
+                self.invoer = input("home/dnr </> ")
                 print(f"Openen van Dienst {self.invoer}...")
                 print("")
                 self.open_dienst(self.invoer)
@@ -41,7 +41,6 @@ class Main:
                 print("Opschonen...")
                 time.sleep(0.5)
                 os.system("cls")
-                print("V B0.1.1.1")
                 print("Typ 'help' voor instructies")
                 print("")
 
@@ -50,7 +49,7 @@ class Main:
 
             elif self.home == "afsl" or self.home == "AFSL":
                     print("Weet u het zeker? J/N")
-                    afsluit = input("afsluiten </> ")
+                    afsluit = input("home/afsluiten </> ")
                     if afsluit == "j" or afsluit == "J":
                         print("Afsluiten en opschonen...")
                         time.sleep(0.5)
@@ -117,7 +116,7 @@ class Main:
                     start = data[1].strip()
                     end = data[2].strip()
                     if num[0] == nummer:
-                        print(f"In 'dnr' menu, typ '{num}' voor dienst: {start} -> {end}.")
+                        print(f"In 'home/dnr' menu, typ '{num}' voor dienst: {start} -> {end}.")
                         nummer_gevonden = True
             if not nummer_gevonden:
                 print("Error #102")
@@ -158,19 +157,19 @@ class Main:
         self.stopminuut = None
         self.stopuur = None
         self.stopminuut = None
-        self.station = input("station </> ")
+        self.station = input("home/nds/station </> ")
         print("Startlocatie/Station toegevoegd. Stap 1/7 gereed.")
-        self.station_nummer = input("stationsnummer </> ")
+        self.station_nummer = input("home/nds/stationsnummer </> ")
         print("Stationsnummer toegevoegd. Stap 2/7 gereed.")
-        self.richting = input("richting </> ")
+        self.richting = input("home/nds/richting </> ")
         print("Richting toegevoegd. Stap 3/7 gereed.")
-        self.frequentie = int(input("frequentie </> "))
+        self.frequentie = int(input("home/nds/frequentie </> "))
         print("Frequentie toegevoegd. Stap 4/7 gereed.")
-        self.startuur = int(input("startuur </> "))
+        self.startuur = int(input("home/nds/startuur </> "))
         print("Startuur toegevoegd. Stap 5/7 gereed.")
-        self.minuut = int(input("startminuut </> "))
+        self.minuut = int(input("home/nds/startminuut </> "))
         print("1e Vertrekminuut toegevoegd. Stap 6/7 gereed.")
-        self.stopuur = int(input("stopuur </> "))
+        self.stopuur = int(input("home/nds/stopuur </> "))
         print("Stopuur toegevoegd. Stap 7/7 gereed.")
 
 
@@ -224,38 +223,38 @@ class Main:
         print("6. voor Vertrekminuut")
         print("7. voor Stopuur")
         print("")
-        self.wijzigen = input("wijzigen </> ")
+        self.wijzigen = input("home/nds/wijzigen </> ")
         if self.wijzigen == "1":
-            self.station = input("station </> ")
+            self.station = input("home/nds/wijzigen/station </> ")
             print(f"Het Station is gewijzigd naar: {self.station}")
             print("Deze waarden opslaan of wijzigen? J/N/W")
 
         elif self.wijzigen == "2":
-            self.station_nummer = input("stationsnummer </> ")
+            self.station_nummer = input("home/nds/wijzigen/stationsnummer </> ")
             print(f"Het Stationsnummer is gewijzigd naar: {self.station_nummer}")
 
         elif self.wijzigen == "3":
-            self.richting = input("richting </> ")
+            self.richting = input("home/nds/wijzigen/richting </> ")
             print(f"De Richting is gewijzigd naar: {self.richting}")
             print("Deze waarden opslaan of wijzigen? J/N/W")
 
         elif self.wijzigen == "4":
-            self.frequentie = int(input("frequentie </> "))
+            self.frequentie = int(input("home/nds/wijzigen/frequentie </> "))
             print(f"De frequentie is gewijzigd naar: {self.frequentie}")
             print("Deze waarden opslaan of wijzigen? J/N/W")
 
         elif self.wijzigen == "5":
-            self.startuur = int(input("startuur </> "))
+            self.startuur = int(input("home/nds/wijzigen/startuur </> "))
             print(f"Het Startuur is gewijzigd naar: {self.startuur}")
             print("Deze waarden opslaan of wijzigen? J/N/W")
 
         elif self.wijzigen == "6":
-            self.minuut = int(input("startminuut </> "))
+            self.minuut = int(input("home/nds/wijzigen/startminuut </> "))
             print(f"De minuut is gewijzigd naar: {self.minuut}")
             print("Deze waarden opslaan of wijzigen? J/N/W")
 
         elif self.wijzigen == "7":
-            self.stopuur = int(input("stopuur </> "))
+            self.stopuur = int(input("home/nds/wijzigen/stopuur </> "))
             print(f"Het Stopuur is gewijzigd naar: {self.stopuur}")
 
 
@@ -378,8 +377,7 @@ class Main:
                 file_3.write(f"%{self.station_nummer},{self.station},{self.richting} \n{resultaat}")
                 print(f"%{self.station_nummer},{self.station},{self.richting} \n{resultaat}")
 
-        os.system("cls")
-        print("V B0.1.1.1")
+        print("")
         print("Gegenereerde dienst te vinden in 'Gegenereerde dienst.txt'")
         print("")
         print("Typ 'help' voor instructies")
@@ -392,7 +390,7 @@ class Main:
     def help_menu(self):
         print("")
         print("Help Menu:")
-        print("- Eerste drie letters voor '</>' geven locatie in programma aan.")
+        print("- De tekst voor '</>' geeft locatie in programma aan.")
         print("- Gebruik menu 1 (Stationcodes) voor informatie over stations en dienstregeling.")
         print("- Gebruik menu 2 (Toevoegen Dienst en Nummer) voor instructies om een dienstregeling toe te voegen.")
         print("- Gebruik menu 3 (Error codes) voor de geregistreerde error codes in dit programma.")
@@ -417,11 +415,11 @@ class Main:
         print("Druk ENTER om te verlaten.")
 
         while True:
-            self.help = input("help </> ")
+            self.help = input("home/help </> ")
             if self.help == "1":
 
                 self.stationsnummer()
-                self.stccode = input("stc </> ")
+                self.stccode = input("home/help/stationscodes </> ")
                 print(f"Openen van Stationscodes voor Station {self.stccode}...")
                 self.open_stationsnummer(self.stccode)
                 print("")
