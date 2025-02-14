@@ -20,14 +20,21 @@ This code can generate, read and print a schedule by using the console. When sta
     - '/Help' opens the help program. Here you've access to 'Stationsnummers','Error codes' and 'Toevoegen Dienst en Nummer'. You can access those subprograms by pressing the number corressponing to the subprograms available and then ENTER.
     - '/afsl' wipes the console and closes the program
     - '/ops' wipes the console
-    - '/nds' opens the 'Nieuwe Dienst' or 'New Schedule' program. Here you can enter information by filling in the inputs given. There are 7 steps. After completing the 7 steps, you will have to enter J/N/W. 
+    - '/nds' opens the 'Nieuwe Dienst' or 'New Schedule' program. Here you can enter information by filling in the inputs given. There are 7 steps. After completing the 7 steps, you will have to enter J/W. 
         - W for 'Wijzigen' or 'changing' to change any of the inputs you gave.
-        - N to stop making a 'Nieuwe Dienst' or 'New Schedule'
         - J to agree to your given information. The program will generate a schedule after this
             The generated schedule will be put in 'Gegenereerde dienst.txt'. To use this schedule, copy the genereted schedule 
     - '/dnr' opens the 'DNR'or 'Diensnummer' or 'Schedule number' program. Here you can enter a schedule number. You can retrieve all the available 'Schedule number's by using the 'Help' command in the home loop, and using the 'Help' subprogram 'Stationsnummers' or number '1'.
     - '/update log' opens the update log.
+    - '/games' to choose for a game.
+    - 'cd..' to go back a location in the program.
 
+### 1.2. Available games.
+    - '/tic tac toe' for tic tac toe game. 
+        - using '/bot' to play against a bot. The game starst automatically
+        - using '/play' to play against another person.
+            - using '/start' to start the game.
+        
 ##  2. Additional files
 With this program there are (currently) 7 files needed for the program to work correctly. The amount of files needed can change with every update.
 
@@ -36,7 +43,7 @@ With this program there are (currently) 7 files needed for the program to work c
     - 'Tijdelijk.txt','Tijdelijk_minuut.txt' and 'Tijdelijk_minuut_2.txt' are files used to store data while generating a schedule. 'Tijdelijk_minuut_2' will be removed once the code is optimalised.
     - 'Update.txt' contains an update log with the changes for every update. A full detailed update log will be available once the code is optimised and development is further.
     - 'Gegenereerde dienst.txt' contains the newly generated schedule and will be overwritten after every new generation
-    - 'Dienst.txt' can be empty, and it is on you to fill it with your created schedules.
+    - 'Dienst.txt' can be empty, and it is on you to fill it with your created schedules. 
 
 ##  3. Update log and version stamps
 ```
@@ -54,15 +61,21 @@ Versionexample: R 01 . 02 . 01 . 09
 
     Last Version:
 
+    Version: BETA 00.01.03.02
+    Shortened version: B0.1.3.2
+    Sort: Patch
+    Addition(s):
+    - In 'Help', '/1' stationnumbers, extra instructions added.
+
+
+    VERSION HISTORY
+
     Version: BETA 00.01.03.01
     Shortened version: B0.1.3.1
     Sort: Patch
     Addition(s):
     - It is now possible to use 'cd..' to go back a step (almost everywhere)
 
-
-
-    VERSION HISTORY
 
     Version: BETA 00.01.03.00
     Shortened version: B0.1.3.0

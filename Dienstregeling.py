@@ -108,7 +108,6 @@ class Main:
     #Stationsnummers opvragen
 
     def open_stationsnummer(self, nummer):
-        print("")
         with open("Dienst.txt") as file:
             nummer_gevonden = False
             for line in file:
@@ -129,6 +128,8 @@ class Main:
 
     def stationsnummer(self):
         print("")
+        print("Type het NUMMER (Zonder '/') van het gewenste station.")
+        print("Druk vervolgens ENTER om alle vertrektijden van het gewenste station op te halen in alle richtingen vanaf dat station.")
         stations = []
         with open("Dienst.txt") as file:
             for line in file:

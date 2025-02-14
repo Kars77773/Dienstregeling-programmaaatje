@@ -4,15 +4,21 @@ Soorten updates: Groot, Klein, Patch
 
 Laatste Versie:
 
+Versie: BETA 00.01.03.02
+Ingekorte Versie: B0.1.3.2
+Soort update: Patch
+    Toevoeging(en)
+        - In 'Help' in '/1' stationsnummers, nieuwe instructie toegevoegd
+
+
+VERSIE GESCHIEDENIS
+
 Versie: BETA 00.01.03.01
 Ingekorte Versie: B0.1.3.1
 Soort update: Patch
     Toevoeging(en)
         - Op bijna elke plaats mogelijkheid 'cd..' te typen om terug te gaan
 
-
-
-VERSIE GESCHIEDENIS
 
 Versie: BETA 00.01.03.00
 Ingekorte Versie: B0.1.3.0
