@@ -54,6 +54,16 @@ Versionexample: R 01 . 02 . 01 . 09
 
     Last Version:
 
+    Version: BETA 00.01.03.01
+    Shortened version: B0.1.3.1
+    Sort: Patch
+    Addition(s):
+    - It is now possible to use 'cd..' to go back a step (almost everywhere)
+
+
+
+    VERSION HISTORY
+
     Version: BETA 00.01.03.00
     Shortened version: B0.1.3.0
     Sort: Minor
@@ -62,9 +72,7 @@ Versionexample: R 01 . 02 . 01 . 09
     - Changed numbers in 'Wijzigen Dienst'
 
 
-    VERSION HISTORY
-
-        Version: BETA 00.01.02.00
+    Version: BETA 00.01.02.00
     Shortened version: B0.1.2.0
     Sort: Minor
     Addition(s):

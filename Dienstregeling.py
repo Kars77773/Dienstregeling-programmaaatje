@@ -3,6 +3,7 @@ import time
 import numpy as np
 from pathlib import Path
 
+
 class Main:
 
     print("Initialiseren:")
@@ -27,7 +28,6 @@ class Main:
             self.home = input("home </> ")
 
             if self.home == "/dnr" or self.home == "/DNR":
-                print("")
                 self.invoer = input("home/dnr </> ")
                 print(f"Openen van Dienst {self.invoer}...")
                 print("")
@@ -64,14 +64,13 @@ class Main:
                         print("Error #101")
 
             elif self.home == "/update log" or self.home == "/Update log":
-                print("")
                 with open("Update.txt") as file:
                     for line in file:
                         file_2 = line.strip()
                         time.sleep(0.01)
                         print(f"{file_2}")
 
-            elif self.home == 'cd':
+            elif self.home == 'cd..':
                 print("Error# #104")
                 
             else:
@@ -210,7 +209,7 @@ class Main:
                             self.dienst_generen()
                             break
 
-                        elif afbreken == 'cd':
+                        elif afbreken == 'cd..':
                             break
                         
                         else:
@@ -220,7 +219,7 @@ class Main:
                 print("Maken dienst afgebroken")
                 break
                 
-            elif doorgaan == 'cd':
+            elif doorgaan == 'cd..':
                 break
     print("8")      
 
@@ -242,7 +241,7 @@ class Main:
 
         if self.wijzigen == "/1":
             self.station = input("home/nds/opslaan/wijzigen/1 </> ")
-            if self.station == 'cd':
+            if self.station == 'cd..':
                 self.wijzigen_dienst()
             else:
                 print(f"Het Station is gewijzigd naar: {self.station}")
@@ -250,7 +249,7 @@ class Main:
 
         elif self.wijzigen == "/2":
             self.station_nummer = input("home/nds/opslaan/wijzigen/2 </> ")
-            if self.station_nummer == 'cd':
+            if self.station_nummer == 'cd..':
                 self.wijzigen_dienst()
             else:
                 print(f"Het Stationsnummer is gewijzigd naar: {self.station_nummer}")
@@ -258,7 +257,7 @@ class Main:
 
         elif self.wijzigen == "/3":
             self.richting = input("home/nds/opslaan/wijzigen/3 </> ")
-            if self.richting == 'cd':
+            if self.richting == 'cd..':
                 self.wijzigen_dienst()
             else:
                 print(f"De Richting is gewijzigd naar: {self.richting}")
@@ -266,7 +265,7 @@ class Main:
 
         elif self.wijzigen == "/4":
             self.frequentie = int(input("home/nds/opslaan/wijzigen/f4 </> "))
-            if self.frequentie == 'cd':
+            if self.frequentie == 'cd..':
                 self.wijzigen_dienst()
             else:
                 print(f"De frequentie is gewijzigd naar: {self.frequentie}")
@@ -274,7 +273,7 @@ class Main:
 
         elif self.wijzigen == "/5":
             self.startuur = int(input("home/nds/opslaan/wijzigen/5 </> "))
-            if self.startuur == 'cd':
+            if self.startuur == 'cd..':
                 self.wijzigen_dienst()
             else:
                 print(f"Het Startuur is gewijzigd naar: {self.startuur}")
@@ -282,7 +281,7 @@ class Main:
 
         elif self.wijzigen == "/6":
             self.minuut = int(input("home/nds/opslaan/wijzigen/6 </> "))
-            if self.minuut == 'cd':
+            if self.minuut == 'cd..':
                 self.wijzigen_dienst()
             else:
                 print(f"De minuut is gewijzigd naar: {self.minuut}")
@@ -290,13 +289,13 @@ class Main:
 
         elif self.wijzigen == "/7":
             self.stopuur = int(input("home/nds/opslaan/wijzigen/7 </> "))
-            if self.stopuur == 'cd':
+            if self.stopuur == 'cd..':
                 self.wijzigen_dienst()
             else:
                 print(f"Het Stopuur is gewijzigd naar: {self.stopuur}")
                 print("Deze waarden opslaan of wijzigen? J/W")
 
-        elif self.wijzigen == "cd":
+        elif self.wijzigen == "cd..":
             print("Deze waarden opslaan of wijzigen? J/W")
  
     print("9")
@@ -316,8 +315,8 @@ class Main:
         with open("Tijdelijk.txt", "w") as file:
             for dienst in diensturen:
                 file.write(f"%{dienst}\n")
-                print(f"{dienst}")
-
+            
+        print("1")
         with open("Tijdelijk.txt", "r") as file, open("Tijdelijk_minuut.txt", "w") as minuut_file:
             for line in file:
                 if line.startswith("%"):
@@ -325,7 +324,7 @@ class Main:
                     tijd = data[0]
                     minuut = data[1].strip()
                     minuut_file.write(f"0.{minuut}  \n")  
-                    print(f"{minuut}")
+        print("2")
 
         with open("Tijdelijk_minuut.txt","r") as minuut_file, open("Tijdelijk_minuut_2.txt","w") as minuut_file_2:
             for line in minuut_file:
@@ -333,7 +332,7 @@ class Main:
                 data = line*60
                 minuut_file = round(data, 0)
                 minuut_file_2.write(f"%{minuut_file} \n")
-                print(f"{minuut_file}")
+        print("3")    
 
         with open("Tijdelijk_minuut_2.txt","r") as file,open ("Tijdelijk_minuut.txt","w") as tijd:
             for line in file:
@@ -341,7 +340,7 @@ class Main:
                     data = line.removeprefix("%").split(".")
                     minuut = data[0]
                     tijd.write(f"{minuut}\n")
-                    print(f"{minuut}\n")
+        print("4")
 
         with open("Tijdelijk.txt","r") as file, open("Tijdelijk_minuut.txt","r") as file_2:
             tijduur_final = []
@@ -410,12 +409,13 @@ class Main:
             # Save to file
             with open("Gegenereerde dienst.txt", "w") as file_3:
                 file_3.write(f"%{self.station_nummer},{self.station},{self.richting} \n{resultaat}")
-                print(f"%{self.station_nummer},{self.station},{self.richting} \n{resultaat}")
+            
+            print("5")   
 
         print("")
         print("Gegenereerde dienst te vinden in 'Gegenereerde dienst.txt'")
         print("")
-        print("Typ 'help' voor instructies")
+        print("Typ '/help' voor instructies")
         print("")
 
     print("11")    
@@ -447,16 +447,16 @@ class Main:
         print("  '/2' Voor het toevoegen Dienst en Nummer.")
         print("  '/3' Voor Error codes")
         print("")
-        print("Typ 'cd' op terug te gaan")
+        print("Typ 'cd..' op terug te gaan")
 
         while True:
             self.help = input("home/help </> ")
             if self.help == "/1":
 
                 self.stationsnummer()
-                self.stccode = input("home/help/1/stationscodes > ")
-                print(f"Openen van Stationscodes voor Station {self.stccode}...")
-                self.open_stationsnummer(self.stccode)
+                stccode = input("home/help/1/stationscodes > ")
+                print(f"Openen van Stationscodes voor Station {stccode}...")
+                self.open_stationsnummer(stccode)
                 print("")
 
             elif self.help == "/2":
@@ -486,8 +486,7 @@ class Main:
                 print("")
                 print("Raadpleeg het internet of een codeboek wanneer de gegeven code niet in deze lijst bekend is.")
 
-            elif self.help == "cd":
-                print("")
+            elif self.help == "cd..":
                 break
 
             else:
