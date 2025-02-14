@@ -61,6 +61,13 @@ Versionexample: R 01 . 02 . 01 . 09
 
     Last Version:
 
+    Version: BETA 00.01.05.00
+    Shortened version: B0.1.5.0
+    Sort: Minor
+    Addition(s):
+    - '/settings' added
+
+    VERSION HISTORY
     Version: BETA 00.01.04.00
     Shortened version: B0.1.4.0
     Sort: Minor
@@ -70,7 +77,7 @@ Versionexample: R 01 . 02 . 01 . 09
     - '/tic tac toe' added
     - '/quiz' added
 
-    VERSION HISTORY
+
     Version: BETA 00.01.03.02
     Shortened version: B0.1.3.2
     Sort: Patch

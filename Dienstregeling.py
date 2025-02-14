@@ -73,8 +73,33 @@ class Main:
                         time.sleep(0.01)
                         print(f"{file_2}")
 
+            elif self.home == "/settings" or self.home == "/Settings":
+                while True:
+                    settings = input("home/settings </> ")
+                    if settings == "/versie":
+                        with open("Version.txt") as file:
+                            for line in file:
+                                print(f"Versie: {line}")
+                        print("Versie aanpassen? J/N")
+                        versie_aanpassen = input("home/settings/versie </> ")
+                        if versie_aanpassen == 'j' or versie_aanpassen == 'J':
+                            versie = input("home/settings/versie/wijzigen </> ")
+                            with open("Version.txt","w") as file:
+                                file.write(f"{versie}")
+                            print("Versie opgeslagen!")
+                        if versie_aanpassen == 'n' or versie_aanpassen == 'N':
+                            continue                    
+                    elif settings == 'cd..':
+                        break
+
+                    else:
+                        print("Error #101")
+
+
+                            
+
             elif self.home == 'cd..':
-                print("Error# #104")
+                print("Error #104")
                 
             else:
                 print("Error #101")
