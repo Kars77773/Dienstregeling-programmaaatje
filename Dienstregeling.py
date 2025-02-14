@@ -2,7 +2,7 @@ import os
 import time
 import numpy as np
 from pathlib import Path
-
+import random
 
 class Main:
 
@@ -62,6 +62,9 @@ class Main:
                 
                     else:
                         print("Error #101")
+            
+            elif self.home == '/games' or self.home == '/Games':
+                self.games()
 
             elif self.home == "/update log" or self.home == "/Update log":
                 with open("Update.txt") as file:
@@ -431,6 +434,7 @@ class Main:
         print("- Gebruik menu '/2' (Toevoegen Dienst en Nummer) voor instructies om een dienstregeling toe te voegen.")
         print("- Gebruik menu '/3' (Error codes) voor de geregistreerde error codes in dit programma.")
         print("")
+        print("Alle commando's hieronder gegeven werken ALLEEN in 'home </> '! ")
         print("Bruikbare commando's:")
         print("- '/afsl' of '/AFSL'")
         print("   Sluit het programma af")
@@ -442,13 +446,17 @@ class Main:
         print("   Gebruiken voor het legen van de consol.e")
         print("- '/nds' of '/NDS'")
         print("   Gebruiken om een nieuwe dienstregeling toe te voegen.")
+        print("- '/games' of 'Games'")
+        print("   Gebruiken om het 'games menu' te openen.")
         print("")
         print("Voer menunummer in voor betreffend hulpmiddel.")
         print("  '/1' Voor de Stationscodes ")
         print("  '/2' Voor het toevoegen Dienst en Nummer.")
         print("  '/3' Voor Error codes")
+        print("  '/4' Voor Extra commando's (Games etc.)")
         print("")
         print("Typ 'cd..' op terug te gaan")
+        print("")
 
         while True:
             self.help = input("home/help </> ")
@@ -487,6 +495,20 @@ class Main:
                 print("")
                 print("Raadpleeg het internet of een codeboek wanneer de gegeven code niet in deze lijst bekend is.")
 
+            elif self.help == '/4':
+                print("Volgende Games (NA HET GRRUIKEN VAN '/games' OF '/Games'!) beschikbaar:")
+                print("")
+                print("- '/tic tac toe'")
+                print("   Je kunt hier samenspelen of tegen een bot spelen.")
+                print("   - '/play' om tegen een ander persoon te spelen")
+                print("   - '/bot' om tegen een bot te spelen")
+                print("- '/quiz'")
+                print("   Je kunt hier kiezen tussen makkelijk, medium of moeilijk")
+                print("   - '/moeilijk' voor een moeilijke quiz. Beantwoord de vragen nadat een vraag gegeven is!")
+                print("   - '/medium' voor een medium quiz. Beantwoord de vragen nadat een vraag gegeven is!")
+                print("   - '/makkelijk' voor een makkelijke quiz. Beantwoord de vragen nadat een vraag gegeven is!")
+                print("")
+
             elif self.help == "cd..":
                 break
 
@@ -495,6 +517,57 @@ class Main:
                 break
 
     print("12")
+
+    def games(self):
+        while True:
+            gameselectie = input("home/games </> ")
+
+            if gameselectie == '/tic tac toe' or gameselectie == '/Tic Tac Toe':
+                self.tic_tac_toe()
+
+            if gameselectie == '/quiz' or gameselectie == '/Quiz':
+                self.quiz()
+
+            elif gameselectie == 'cd..':
+                break
+            
+
+    print("13")
+
+    def tic_tac_toe(self):
+
+        while True:
+            mode = input("home/games/tic tac toe </> ")
+            
+            if mode == '/play' or mode == '/Play':
+                speler_1_set_1 = float(input("home/games/tic tac toe/play </> "))
+
+            if mode == '/bot' or mode == '/Bot':
+                print("Spelen met een bot.")
+
+            if mode == 'cd..':
+                break
+
+
+    print("14")
+
+    def quiz(self):
+        while True:
+            mode = input("home/games/quiz </> ")
+            
+            if mode == '/moeilijk' or mode == '/Moeilijk':
+                print("Moeilijk")
+
+            if mode == '/Medium' or mode == '/medium':
+                print("Medium")
+
+            if mode == 'Makkelijk' or mode == '/makkelijk':
+                print("Makkelijk")
+
+            if mode == 'cd..':
+                break
+
+    print("15")
 
     print("Controleren van bestanden...")
     with open("Dienst.txt") as file:

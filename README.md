@@ -61,6 +61,16 @@ Versionexample: R 01 . 02 . 01 . 09
 
     Last Version:
 
+    Version: BETA 00.01.04.00
+    Shortened version: B0.1.4.0
+    Sort: Minor
+    Addition(s):
+    - In 'Help', added information for new commands
+    - '/games' added
+    - '/tic tac toe' added
+    - '/quiz' added
+
+    VERSION HISTORY
     Version: BETA 00.01.03.02
     Shortened version: B0.1.3.2
     Sort: Patch
@@ -68,7 +78,6 @@ Versionexample: R 01 . 02 . 01 . 09
     - In 'Help', '/1' stationnumbers, extra instructions added.
 
 
-    VERSION HISTORY
 
     Version: BETA 00.01.03.01
     Shortened version: B0.1.3.1
